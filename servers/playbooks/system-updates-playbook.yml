@@ -1,0 +1,23 @@
+- name: System Updates
+  hosts: all
+  become: true
+  tasks:
+    - name: DNF Update
+      ansible.builtin.dnf:
+        name: '*'
+        state: latest
+        update_cache: true
+       # cache_valid_time: 3600
+      when:
+        - ansible_os_family == "RedHat"
+        - ansible_distribution == "CentOS"
+
+    - name: Install system updates for ubuntu systems
+      ansible.builtin.apt:
+        name: '*'
+        state: latest
+        update_cache: true
+       # cache_valid_time: 3600
+      when:
+        - ansible_os_family == "Debian"
+        - ansible_distribution == "Ubuntu"
