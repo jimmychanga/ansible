@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "ansible"
+version = "0.1.0"
+description = "Bodiddely Ansible Project - This project is used to learn ansible and to deploy lab servers and network hardware."
+authors = ["Joe Marr <joe.marr@bodiddely.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
