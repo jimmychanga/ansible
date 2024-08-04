@@ -7,17 +7,42 @@ File Structure:
 
 ```text
 ansible
-   |__network
-   |  |__inventory
-   |  |  |__
-   |  |__playbooks
-   |  |  |__
-   |  |__ansible.cfg
-   |__servers
-   |  |__inventory
-   |  |  |__servers.ini
-   |  |__playbooks
-   |     |__sshd-config-playback.yml
-   |     |__system-updates-playbook.yml
-   |__playbooks
+   |
+   |--network
+   |  |--inventory/
+   |  |   |--
+   |  |
+   |  |--playbooks/
+   |  |   |--templates/
+   |  |   |--
+   |  |
+   |  |--ansible.cfg
+   |
+   |--servers/
+   |  |
+   |  |--inventory/
+   |  |  |
+   |  |  |--development/
+   |  |  |   |--hosts.ini
+   |  |  |   |--group_vars/
+   |  |  |   |--host_vars/  
+   |  |  |
+   |  |  |--testing/
+   |  |  |   |--hosts.ini
+   |  |  |   |--group_vars/
+   |  |  |   |--host_vars/
+   |  |  |
+   |  |  |--production/
+   |  |      |--hosts.ini
+   |  |      |--group_vars/
+   |  |      |--host_vars/
+   |  |
+   |  |--playbooks
+   |  |   |--templates/
+   |  |   |--sshd-config-playback.yml
+   |  |   |--system-updates-playbook.yml
+   |  |
+   |  |--ansible.cfg
+   |
+   |--playbooks
 ```

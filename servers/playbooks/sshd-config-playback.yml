@@ -1,6 +1,23 @@
-- hosts: all
-  become: yes
-
+# Test Playbook for SSHD
+---
+- name: Configure SSHD
+  hosts: all
+  become: true
+  vars_files: ~/.ansible/vault
   tasks:
-    - name: Configure SSHD
-
+    - name: Configure and Harden SSH Server
+      ansible.builtin.include_role:
+        name: willshersystems.sshd
+      vars:
+        sshd_config_namespace: accept-env
+        sshd_manage_firewall: true
+        sshd_manage_selinux: true
+        sshd:
+          Port: 1989
+          PermitRootLogin: false
+          PasswordAuthentication: false
+          Match:
+            - Condition: "Address 192.168.0.0/16"
+              PermitRootLogin: true
+              PasswordAuthentication: true
+...

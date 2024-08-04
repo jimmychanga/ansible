@@ -1,2 +1,6 @@
 .venv/
 .vscode/
+.vault_pass
+servers/files/id_ed25519
+servers/files/id_ed25519.pub
+servers/files/authorized_keys

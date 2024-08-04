@@ -1,13 +1,16 @@
+# Purpose this play is to perform system updates on target servers
+---
 - name: System Updates
   hosts: all
   become: true
+  vars_files: ~/.ansible/vault
   tasks:
     - name: DNF Update
       ansible.builtin.dnf:
         name: '*'
         state: latest
         update_cache: true
-       # cache_valid_time: 3600
+        # cache_valid_time: 3600
       when:
         - ansible_os_family == "RedHat"
         - ansible_distribution == "CentOS"
@@ -17,7 +20,8 @@
         name: '*'
         state: latest
         update_cache: true
-       # cache_valid_time: 3600
+        # cache_valid_time: 3600
       when:
         - ansible_os_family == "Debian"
         - ansible_distribution == "Ubuntu"
+...
