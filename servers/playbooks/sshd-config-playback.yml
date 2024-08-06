@@ -1,11 +1,12 @@
-# Test Playbook for SSHD
 ---
-- name: Configure SSHD
+- name: Secure and Hardening of SSHD
   hosts: all
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
   become: true
   vars_files: ~/.ansible/vault
   tasks:
-    - name: Configure and Harden SSH Server
+    - name: Configure sshd
       ansible.builtin.include_role:
         name: willshersystems.sshd
       vars:
@@ -16,8 +17,13 @@
           Port: 1989
           PermitRootLogin: false
           PasswordAuthentication: false
-          Match:
-            - Condition: "Address 192.168.0.0/16"
-              PermitRootLogin: true
-              PasswordAuthentication: true
+          PubkeyAuthentication: true
+          MaxSessions: 5
+          MaxAuthTries: 2
+          LoginGraceTime: 30
+          MaxStartUps: 5:30:10
+          AllowUsers:
+            - jimmychanga
+            - corpaldorf
+            - ansible
 ...

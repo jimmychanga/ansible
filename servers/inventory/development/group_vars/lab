@@ -1,3 +1,7 @@
+---
 ansible_port: 22
-ansible_user: ansible
+ansible_user: corpaldorf
+ansible_become_method: sudo
+ansible_password: "{{ vault_sudo_password }}"
 ansible_private_key_file: /home/corpaldorf/.ssh/id_ed25519
+ansible_become_password: "{{ vault_sudo_password }}"
