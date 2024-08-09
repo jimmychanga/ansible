@@ -1,0 +1,5 @@
+---
+hostname: cerebro
+domain: bodiddely.internal
+ipv4_address: 192.168.10.61
+...
