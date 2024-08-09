@@ -33,9 +33,11 @@ ansible
    |  |  |   |--host_vars/
    |  |  |
    |  |  |--production/
-   |  |      |--hosts.ini
-   |  |      |--group_vars/
-   |  |      |--host_vars/
+   |  |  |   |--hosts.ini
+   |  |  |   |--group_vars/
+   |  |  |   |--host_vars/
+   |  |  |
+   |  |  |--servers.ini
    |  |
    |  |--playbooks
    |  |   |--templates/

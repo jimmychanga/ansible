@@ -1,0 +1,14 @@
+---
+- name: 'OS Family'
+  hosts: all
+  gather_facts: true
+  tasks:
+    - name: 'Print out operating systems details'
+      ansible.builtin.debug:
+        msg: >-
+          hostname: {{ hostname }}.{{ domain }},
+          ipv4_address: {{ ipv4_address }},
+          os_family: {{ ansible_facts.os_family }},
+          distro: {{ ansible_facts.distribution }} {{ ansible_facts.distribution_version }},
+          kernel: {{ ansible_facts.kernel }}
+...
