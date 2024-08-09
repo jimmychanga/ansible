@@ -1,6 +1,0 @@
----
-all:
-  port: 22
-  user: ansible
-  private_key_file: /home/corpaldorf/.ssh/id_ed25519
-...
