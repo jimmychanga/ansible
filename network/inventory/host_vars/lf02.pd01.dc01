@@ -1,0 +1,7 @@
+---
+hostname: lf02.pd01.dc01
+mgmt:
+  hostname: lf02.pd01.dc01.mgmt
+  domain: bodiddely.internal
+  mgmt_ipv4_address: 10.1.3.7
+...

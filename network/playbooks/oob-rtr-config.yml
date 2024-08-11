@@ -1,0 +1,12 @@
+---
+- name: Configuration - oob-rtr
+  hosts: oob-rtr01
+  become: true
+  vars_files: ~/.ansible/vault
+  tasks:
+    - name: Configure device hostname
+      cisco.ios.ios_command:
+        commands:
+          - "configure terminal"
+          - "hostname {{ hostname }}"
+...

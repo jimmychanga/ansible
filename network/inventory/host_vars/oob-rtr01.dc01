@@ -1,0 +1,7 @@
+---
+hostname: oob-rtr01.dc01
+mgmt:
+  hostname: oob-rtr01.dc01.mgmt
+  domain: bodiddely.internal
+  mgmt_ipv4_address: 10.1.3.1
+...

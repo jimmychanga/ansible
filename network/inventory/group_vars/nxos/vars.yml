@@ -1,0 +1,6 @@
+---
+ansible_network_os: cisco.nxos.nxos
+ansible_user: netadmin
+ansible_password: "{{ vault_netadmin_password }}"
+ansible_become_password: "{{ vault_enable_password }}"
+...
