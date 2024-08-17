@@ -4,11 +4,15 @@
   gather_facts: false
   vars:
     ansible_python_interpreter: /usr/bin/python3
-  become: true
+    nxos_provider:
+      username: "{{ ansible_username }}"
+      password: "{{ ansible_password }}"
+      transport: nxapi
+      host: "{{inventory_hostname}}"
   vars_files: ~/.ansible/vault
   tasks:
     - name: Gather VRF Information
-      cisco.nxos.nxos_command:
+      cisco.nxos.nxapi:
         commands: show vrf
       register: nxos_facts
 

@@ -1,0 +1,25 @@
+---
+
+- name: Cisco Version
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: NXOS - show version
+      cisco.nxos.nxos_command:
+        commands: show version | include NXOS
+      register: output
+      when:
+        - ansible_network_os == "nxos"
+
+    - name: Show Version - ios
+      cisco.ios.ios_command:
+        commands: show version | include Version
+      register: output
+      when:
+        - ansible_network_os == "ios"
+
+
+    - name: Display Version
+      ansible.builtin.debug:
+        var: output.stdout_lines
+...
