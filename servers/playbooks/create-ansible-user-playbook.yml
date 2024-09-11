@@ -2,7 +2,7 @@
 - name: Ansible User Creation
   hosts: all
   become: true
-  vars_files: ~/.ansible/vault
+  vars_files: ~/ansible/vault.yaml
   tasks:
     - name: Create ansible account
       ansible.builtin.user:

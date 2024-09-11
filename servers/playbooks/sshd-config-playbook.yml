@@ -4,7 +4,7 @@
   vars:
     ansible_python_interpreter: /usr/bin/python3
   become: true
-  vars_files: ~/.ansible/vault
+  vars_files: ~/ansible/vault.yml
   tasks:
     - name: Configure sshd
       ansible.builtin.include_role:

@@ -2,7 +2,7 @@
 - name: 'OS Family'
   hosts: all
   gather_facts: true
-  vars_files: ~/.ansible/vault
+  vars_files: ~/ansible/vault.yml
   tasks:
     - name: 'Print out operating systems details'
       ansible.builtin.debug:
